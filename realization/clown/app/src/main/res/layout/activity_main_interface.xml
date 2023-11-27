@@ -1,0 +1,58 @@
+<!-- res/layout/activity_main_interface.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnNotesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notes List"/>
+<!--        android:onClick="onNotesListClicked"-->
+<!--        />-->
+
+    <Button
+        android:id="@+id/btnAlarmsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alarms List"
+        android:layout_below="@id/btnNotesList"
+        android:layout_marginTop="16dp"/>
+<!--        android:onClick="onAlarmsListClicked"/>-->
+
+    <Button
+        android:id="@+id/btnCheerUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cheer Up"
+        android:layout_below="@id/btnAlarmsList"
+        android:layout_marginTop="16dp"/>
+<!--        android:onClick="onCheerUpClicked"-->
+        />
+
+    <Button
+        android:id="@+id/btnGeneratePic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate Pic"
+        android:layout_below="@id/btnCheerUp"
+        android:layout_marginTop="16dp"/>
+<!--        android:onClick="onGeneratePicClicked"-->
+<!--        />-->
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="392dp"
+        android:layout_height="277dp"
+        android:layout_below="@id/btnGeneratePic"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="227dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginEnd="230dp"
+        android:text="Settings" />
+    <!--        android:onClick="onSettingsClicked"-->
+<!--        />-->
+
+</RelativeLayout>
