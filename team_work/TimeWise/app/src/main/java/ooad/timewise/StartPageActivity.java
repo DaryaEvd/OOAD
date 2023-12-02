@@ -1,6 +1,7 @@
 package ooad.timewise;
 
-import android.content.Intent;
+import static ooad.timewise.ActivitiesUtils.switchToActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,23 +36,23 @@ public class StartPageActivity extends AppCompatActivity {
         notesBtn.setOnClickListener(this::clickOnNotesBtn);
     }
 
-    private void clickOnCalendarBtn(View v){
-        switchToActivity(CalendarActivity.class);
+    private void clickOnCalendarBtn(View v) {
+        switchToActivity(CalendarActivity.class, this);
     }
-    private void clickOnAlarmsBtn(View v){
-        switchToActivity(AlarmsListActivity.class);
+
+    private void clickOnAlarmsBtn(View v) {
+        switchToActivity(AlarmsListActivity.class, this);
     }
-    private void clickOnCheerUpBtn(View v){
-        switchToActivity(CheerUpActivity.class);
+
+    private void clickOnCheerUpBtn(View v) {
+        switchToActivity(CheerUpActivity.class, this);
     }
-    private void clickOnNotesBtn(View v){
-        switchToActivity(NotesListActivity.class);
+
+    private void clickOnNotesBtn(View v) {
+        switchToActivity(NotesListActivity.class, this);
     }
-    private void clickOnSettingsBtn(View v){
-        switchToActivity(SettingsActivity.class);
-    }
-    private void switchToActivity(Class<?> activityClass){
-        Intent intent = new Intent(this, activityClass);
-        startActivity(intent);
+
+    private void clickOnSettingsBtn(View v) {
+        switchToActivity(SettingsActivity.class, this);
     }
 }

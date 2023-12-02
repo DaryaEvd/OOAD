@@ -27,7 +27,5 @@
     <string name="to_alarm_button">Alarms</string>
     <string name="add_alarm_text">Add alarm</string>
     <string name="list_alarms_text">Alarms list</string>
-    <string name="enter_password_hint">Enter password</string>
-    <string name="enter_new_password_hint">Enter new password</string>
-    <string name="confirm_password_hint">Confirm password</string>
+
 </resources>
