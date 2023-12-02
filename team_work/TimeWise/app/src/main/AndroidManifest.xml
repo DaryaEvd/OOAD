@@ -13,6 +13,21 @@
         android:theme="@style/Theme.TimeWise"
         tools:targetApi="31">
         <activity
+            android:name=".notes.NotesListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cheerup.CheerUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".alarms.AlarmsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calendar.CalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,9 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".password.NewPasswordEnteringPageActivity"/>
-        <activity android:name=".password.PasswordEnteringPageActivity"/>
-        <activity android:name=".StartPageActivity"/>
+        <activity android:name=".password.NewPasswordEnteringPageActivity" />
+        <activity android:name=".password.PasswordEnteringPageActivity" />
+        <activity android:name=".StartPageActivity" />
     </application>
 
 </manifest>

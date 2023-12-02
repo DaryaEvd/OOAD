@@ -1,32 +1,57 @@
 package ooad.timewise;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class StartPageActivity extends AppCompatActivity {
+import ooad.timewise.alarms.AlarmsListActivity;
+import ooad.timewise.calendar.CalendarActivity;
+import ooad.timewise.cheerup.CheerUpActivity;
+import ooad.timewise.notes.NotesListActivity;
+import ooad.timewise.settings.SettingsActivity;
 
-    private Button cheerUpBtn;
-    private Button notesBtn;
-    private Button calendarBtn;
-    private Button alarmsBtn;
-    private Button settingsBtn;
-    private Button exitBtn;
+public class StartPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page);
 
-        cheerUpBtn = findViewById(R.id.cheer_up_btn);
-        notesBtn = findViewById(R.id.notes_btn);
-        calendarBtn = findViewById(R.id.calendar_btn);
-        alarmsBtn = findViewById(R.id.alarms_btn);
-        exitBtn = findViewById(R.id.exit_btn);
+        Button cheerUpBtn = findViewById(R.id.cheer_up_btn);
+        Button notesBtn = findViewById(R.id.notes_btn);
+        Button calendarBtn = findViewById(R.id.calendar_btn);
+        Button alarmsBtn = findViewById(R.id.alarms_btn);
+        Button settingsBtn = findViewById(R.id.settings_btn);
+        Button exitBtn = findViewById(R.id.exit_start_page_btn);
 
         exitBtn.setOnClickListener(v -> finishAffinity());
+        calendarBtn.setOnClickListener(this::clickOnCalendarBtn);
+        alarmsBtn.setOnClickListener(this::clickOnAlarmsBtn);
+        cheerUpBtn.setOnClickListener(this::clickOnCheerUpBtn);
+        settingsBtn.setOnClickListener(this::clickOnSettingsBtn);
+        notesBtn.setOnClickListener(this::clickOnNotesBtn);
     }
 
+    private void clickOnCalendarBtn(View v){
+        switchToActivity(CalendarActivity.class);
+    }
+    private void clickOnAlarmsBtn(View v){
+        switchToActivity(AlarmsListActivity.class);
+    }
+    private void clickOnCheerUpBtn(View v){
+        switchToActivity(CheerUpActivity.class);
+    }
+    private void clickOnNotesBtn(View v){
+        switchToActivity(NotesListActivity.class);
+    }
+    private void clickOnSettingsBtn(View v){
+        switchToActivity(SettingsActivity.class);
+    }
+    private void switchToActivity(Class<?> activityClass){
+        Intent intent = new Intent(this, activityClass);
+        startActivity(intent);
+    }
 }
