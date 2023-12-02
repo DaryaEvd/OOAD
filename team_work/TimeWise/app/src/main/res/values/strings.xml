@@ -30,4 +30,12 @@
     <string name="enter_password_hint">Enter password</string>
     <string name="enter_new_password_hint">Enter new password</string>
     <string name="confirm_password_hint">Confirm password</string>
+
+    <string name="get_cat_cheerup_text">Get a cat</string>
+    <string name="get_quote_cheerup_text">Get a quote</string>
+    <string name="cheerup_page_text">Cheer up\n your mood!</string>
+
+    <string name="change_appearance_text">Change appearance</string>
+    <string name="change_language_text">Change language</string>
+
 </resources>
