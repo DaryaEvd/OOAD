@@ -36,7 +36,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/cheerup_go_to_start_page_btn"
+            android:id="@+id/cheerup_back_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/start_page_button_colors"

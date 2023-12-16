@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.86">
 
         <Button
-            android:id="@+id/alarms_add_alarm_btn"
+            android:id="@+id/add_alarm_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/start_page_button_colors"

@@ -8,7 +8,7 @@
     tools:context=".notes.NotesListActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayoutAlarms"
+        android:id="@+id/linearLayout2"
         android:layout_width="280dp"
         android:layout_height="99dp"
         android:orientation="vertical"
@@ -17,10 +17,10 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.86">
+        app:layout_constraintVertical_bias="0.95">
 
         <Button
-            android:id="@+id/alarms_add_alarm_btn"
+            android:id="@+id/add_note_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/start_page_button_colors"
@@ -49,16 +49,24 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.023" />
 
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="409dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutAlarms"
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="504dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.07999998">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notes_recycler_home"
+            android:layout_width="352dp"
+            android:layout_height="479dp"
+            android:layout_margin="8dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,21 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeWise"
         tools:targetApi="31">
-        <activity
-            android:name=".notes.NotesListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".settings.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".cheerup.CheerUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".alarms.AlarmsListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".calendar.CalendarActivity"
-            android:exported="false" />
+        <activity android:name=".notes.NotesListActivity" />
+        <activity android:name=".settings.SettingsActivity" />
+        <activity android:name=".cheerup.CheerUpActivity" />
+        <activity android:name=".alarms.AlarmsListActivity" />
+        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".notes.NotesTakerActivity" />
+        <activity android:name=".cheerup.CatPictureActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

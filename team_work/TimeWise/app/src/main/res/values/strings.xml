@@ -37,5 +37,11 @@
 
     <string name="change_appearance_text">Change appearance</string>
     <string name="change_language_text">Change language</string>
+    <string name="enter_text">Enter text</string>
+    <string name="title">Enter title</string>
+    <string name="delete">Delete</string>
 
+
+    <string name="one_more_btn_text">One more</string>
+    <string name="cat_pic_back_btn">Back</string>
 </resources>
