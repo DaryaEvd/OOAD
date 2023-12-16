@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,49 +20,54 @@ import okhttp3.Request;
 import okhttp3.Response;
 import ooad.timewise.R;
 
-public class CatPictureActivity extends AppCompatActivity {
-    private static final String API_KEY = "live_6yLnFUjOhdHHOrKTtdTrvZrlBJymtaL6qYh3xkYE2xDRmLrEgNKY323vteABVEKR";
-    private static final String QUERY = "https://api.thecatapi.com/v1/images/search?api_key=" + API_KEY;
-    private ImageView catImageView;
+public class QuoteActivity extends AppCompatActivity {
+    private static final String QUERY = "https://favqs.com/api/qotd";
+
+    String[] data;
+    private TextView quotesTextView;
+    private TextView authorTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cat_picture_page);
+        setContentView(R.layout.quote_show_page);
 
-        Button backButton = findViewById(R.id.backButton);
+        Button backButton = findViewById(R.id.backQuoteButton);
         backButton.setOnClickListener(this::clickOnBackBtn);
 
-        catImageView = findViewById(R.id.catImageView);
+        Button oneMoreButton = findViewById(R.id.oneMoreQuoteButton);
+        oneMoreButton.setOnClickListener(this::clickOnOneMoreButton);
 
-        Button oneMoreButton = findViewById(R.id.oneMoreButton);
-        oneMoreButton.setOnClickListener(this::clickOnOneMoreBtn);
+        quotesTextView = findViewById(R.id.quoteTextView);
+        authorTextView = findViewById(R.id.quoteAuthorTextView);
 
         try {
-            showPicture();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    private void showPicture() throws IOException {
-        //TODO: обработать null
-        String urlPic = getUrlPic();
-
-        Glide.with(this).load(urlPic).into(catImageView);
-    }
-
-    private void clickOnOneMoreBtn(View view)  {
-        try {
-          showPicture();
+            showQuoteAuthor();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private String getUrlPic() throws IOException {
+    private void clickOnOneMoreButton(View view) {
+        try {
+            showQuoteAuthor();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    private void showQuoteAuthor() throws IOException {
+        String[] dataFromUrl = getUrlText();
+
+        assert dataFromUrl != null;
+        String authorFromQuery = dataFromUrl[0];
+        String bodyFromQuery = dataFromUrl[1];
+
+        authorTextView.setText(authorFromQuery);
+        quotesTextView.setText(bodyFromQuery);
+    }
+
+    private String[] getUrlText() throws IOException {
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
@@ -78,24 +81,30 @@ public class CatPictureActivity extends AppCompatActivity {
 
             try (Response response = client.newCall(request).execute()) {
                 okhttp3.ResponseBody responseBody = response.body();
-                if (responseBody == null){
-                    //TODO обработать
+                if (responseBody == null) {
                     return null;
                 }
-                return parseImageUrl(responseBody.string());
+                return parseTextUrl(responseBody.string());
             }
 
         }
         return null;
     }
 
-    private String parseImageUrl(String jsonResponse) {
+    private String[] parseTextUrl(String response) {
+        String[] res = new String[2];
         try {
-            JSONArray jsonArray = new JSONArray(jsonResponse);
-            if (jsonArray.length() > 0) {
-                JSONObject jsonObject = jsonArray.getJSONObject(0);
-                return jsonObject.getString("url");
-            }
+            JSONObject jsonResponse = new JSONObject(response);
+            JSONObject quote = jsonResponse.getJSONObject("quote");
+
+            String author = quote.getString("author");
+            String body = quote.getString("body");
+
+            res[0] = author;
+            res[1] = body;
+
+            return res;
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -105,5 +114,4 @@ public class CatPictureActivity extends AppCompatActivity {
     private void clickOnBackBtn(View view) {
         switchToActivity(CheerUpActivity.class, this);
     }
-
 }

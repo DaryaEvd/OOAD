@@ -41,7 +41,13 @@
     <string name="title">Enter title</string>
     <string name="delete">Delete</string>
 
-
     <string name="one_more_btn_text">One more</string>
     <string name="cat_pic_back_btn">Back</string>
+
+    <string name="text_of_quote">There is a text for quote</string>
+    <string name="author_name_text">Author name</string>
+    <string name="one_more_quote_btn">One more</string>
+    <string name="quote_back_btn">Back</string>
+
+
 </resources>

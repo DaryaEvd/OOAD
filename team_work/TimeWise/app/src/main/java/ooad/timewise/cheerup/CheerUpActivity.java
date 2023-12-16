@@ -19,19 +19,23 @@ public class CheerUpActivity extends AppCompatActivity {
         setContentView(R.layout.cheer_up_page);
 
         Button showCatBtn = findViewById(R.id.get_cat_cheerup_btn);
+        Button showQuoteBtn = findViewById(R.id.get_quote_cheerup_btn);
         Button backBtn = findViewById(R.id.cheerup_back_btn);
 
         showCatBtn.setOnClickListener(this::clickOnShowCatBtn);
+        showQuoteBtn.setOnClickListener(this::clickOnShowQuoteBtn);
         backBtn.setOnClickListener(this::clickOnBackBtn);
-
-    }
-
-    private void clickOnBackBtn(View view) {
-        switchToActivity(StartPageActivity.class, this);
     }
 
     private void clickOnShowCatBtn(View view) {
         switchToActivity(CatPictureActivity.class, this);
     }
 
+    private void clickOnShowQuoteBtn(View view) {
+        switchToActivity(QuoteActivity.class, this);
+    }
+
+    private void clickOnBackBtn(View view) {
+        switchToActivity(StartPageActivity.class, this);
+    }
 }

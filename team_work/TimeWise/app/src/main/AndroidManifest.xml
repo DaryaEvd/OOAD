@@ -20,6 +20,8 @@
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".notes.NotesTakerActivity" />
         <activity android:name=".cheerup.CatPictureActivity"/>
+        <activity android:name=".cheerup.QuoteActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/start_page_background_color"
-    tools:context=".cheerup.CatPictureActivity">
+    tools:context=".cheerup.QuoteActivity">
 
-    <ImageView
-        android:id="@+id/catImageView"
-        android:layout_width="276dp"
-        android:layout_height="302dp"
-        android:layout_margin="16dp"
-        android:scaleType="centerCrop"
+
+    <TextView
+        android:id="@+id/quoteTextView"
+        android:layout_width="281dp"
+        android:layout_height="360dp"
+        android:text="@string/text_of_quote"
+        android:textColor="@color/start_page_button_colors"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonsQuoteLayout"
-        app:layout_constraintVertical_bias="0.19"
-        />
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <LinearLayout
         android:id="@+id/buttonsQuoteLayout"
@@ -27,32 +27,45 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/oneMoreButton"
+            android:id="@+id/oneMoreQuoteButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/start_page_button_colors"
-            android:text="@string/one_more_btn_text"
-            android:textColor="@color/white"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:text="@string/one_more_quote_btn"
+            android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/backButton"
+            android:id="@+id/backQuoteButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/start_page_button_colors"
-            android:text="@string/cat_pic_back_btn"
-            android:textColor="@color/white"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:text="@string/quote_back_btn"
+            android:textColor="@color/white" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/quoteAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/author_name_text"
+        android:textColor="@color/start_page_button_colors"
+        android:textColorHighlight="@color/start_page_button_colors"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quoteTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
