@@ -4,62 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/start_page_background_color"
-    tools:context=".alarms.AlarmsListActivity">
-
-    <LinearLayout
-        android:id="@+id/linearLayoutAlarms"
-        android:layout_width="274dp"
-        android:layout_height="99dp"
-        android:orientation="vertical"
+    tools:context=".alarms.activities.AlarmsListActivity">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.86">
-
-        <Button
-            android:id="@+id/add_alarm_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/start_page_button_colors"
-            android:text="@string/add_alarm_text"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/alarms_back_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/start_page_button_colors"
-            android:text="@string/go_back_to_start_page"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/alarms_page_text"
-        android:textColor="@color/start_page_button_colors"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
-
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="402dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutAlarms"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:id="@+id/activity_main_nav_host_fragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

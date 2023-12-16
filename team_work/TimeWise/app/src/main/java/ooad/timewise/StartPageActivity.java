@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ooad.timewise.alarms.AlarmsListActivity;
+import ooad.timewise.alarms.activities.AlarmsListActivity;
 import ooad.timewise.calendar.CalendarActivity;
 import ooad.timewise.cheerup.CheerUpActivity;
 import ooad.timewise.notes.NotesListActivity;

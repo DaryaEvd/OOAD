@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
 
         android:allowBackup="true"
@@ -16,12 +23,14 @@
         <activity android:name=".notes.NotesListActivity" />
         <activity android:name=".settings.SettingsActivity" />
         <activity android:name=".cheerup.CheerUpActivity" />
-        <activity android:name=".alarms.AlarmsListActivity" />
+        <activity
+            android:name=".alarms.activities.AlarmsListActivity"
+            android:exported="true"
+            />
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".notes.NotesTakerActivity" />
         <activity android:name=".cheerup.CatPictureActivity"/>
         <activity android:name=".cheerup.QuoteActivity"/>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -34,6 +43,17 @@
         <activity android:name=".password.NewPasswordEnteringPageActivity" />
         <activity android:name=".password.PasswordEnteringPageActivity" />
         <activity android:name=".StartPageActivity" />
+        <activity android:name=".alarms.activities.RingActivity"/>
+        <receiver android:name=".alarms.broadcastreciever.AlarmBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".alarms.service.AlarmService" />
+        <service android:name=".alarms.service.RescheduleAlarmsService" />
+
     </application>
 
 </manifest>
