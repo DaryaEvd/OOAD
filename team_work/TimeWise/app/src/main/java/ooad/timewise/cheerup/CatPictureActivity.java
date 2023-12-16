@@ -32,6 +32,7 @@ public class CatPictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cat_picture_page);
 
+
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(this::clickOnBackBtn);
 
@@ -39,14 +40,25 @@ public class CatPictureActivity extends AppCompatActivity {
 
         Button oneMoreButton = findViewById(R.id.oneMoreButton);
         oneMoreButton.setOnClickListener(this::clickOnOneMoreBtn);
+
+        try {
+            showPicture();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void showPicture() throws IOException {
+        //TODO: обработать null
+        String urlPic = getUrlPic();
+
+        Glide.with(this).load(urlPic).into(catImageView);
     }
 
     private void clickOnOneMoreBtn(View view)  {
         try {
-            //TODO: обработать null
-            String urlPic = getUrlPic();
-
-            Glide.with(this).load(urlPic).into(catImageView);
+          showPicture();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,8 +67,7 @@ public class CatPictureActivity extends AppCompatActivity {
     private String getUrlPic() throws IOException {
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
-        if (SDK_INT > 8)
-        {
+        if (SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
             StrictMode.setThreadPolicy(policy);
