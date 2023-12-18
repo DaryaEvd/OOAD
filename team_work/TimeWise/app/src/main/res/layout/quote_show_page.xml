@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/start_page_background_color"
+    android:background="@color/background_color"
     tools:context=".cheerup.QuoteActivity">
 
 
@@ -12,60 +12,61 @@
         android:id="@+id/quoteTextView"
         android:layout_width="281dp"
         android:layout_height="360dp"
+        android:fontFamily="sans-serif"
         android:text="@string/text_of_quote"
-        android:textColor="@color/start_page_button_colors"
-        android:textSize="34sp"
+        android:textAlignment="center"
+        android:textColor="@color/button_colors"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsQuoteLayout"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/quoteAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/author_name_text"
+        android:textColor="@color/button_colors"
+        android:textColorHighlight="@color/button_colors"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quoteTextView" />
 
     <LinearLayout
-        android:id="@+id/buttonsQuoteLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        android:layout_width="305dp"
+        android:layout_height="108dp"
+        android:layout_marginBottom="54dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quoteTextView"
+        app:layout_constraintVertical_bias="0.88">
 
         <Button
             android:id="@+id/oneMoreQuoteButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="286dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/start_page_button_colors"
+            android:backgroundTint="@color/button_colors"
             android:text="@string/one_more_quote_btn"
             android:textColor="@color/white" />
 
         <Button
             android:id="@+id/backQuoteButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="286dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/start_page_button_colors"
+            android:backgroundTint="@color/button_colors"
             android:text="@string/quote_back_btn"
             android:textColor="@color/white" />
-
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/quoteAuthorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/author_name_text"
-        android:textColor="@color/start_page_button_colors"
-        android:textColorHighlight="@color/start_page_button_colors"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.69"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

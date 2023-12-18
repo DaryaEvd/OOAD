@@ -46,7 +46,7 @@ public class NotesListActivity extends AppCompatActivity implements PopupMenu.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notes_list);
 
-        Button backBtn = findViewById(R.id.notes_back_btn);
+        Button backBtn = findViewById(R.id.back_btn);
         backBtn.setOnClickListener(this::clickOnBackBtn);
 
         recyclerView = findViewById(R.id.notes_recycler_home);

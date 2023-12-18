@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/single_note_color"
+        android:background="@color/single_element_color"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -31,7 +31,7 @@
                 android:scrollHorizontally="true"
                 android:singleLine="true"
                 android:text="Title"
-                android:textColor="@color/single_note_text_color"
+                android:textColor="@color/single_element_text_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -43,7 +43,7 @@
             android:maxLines="10"
             android:padding="8dp"
             android:text="Note text"
-            android:textColor="@color/single_note_text_color"
+            android:textColor="@color/single_element_text_color"
             android:textSize="14sp"
             android:textStyle="normal" />
 

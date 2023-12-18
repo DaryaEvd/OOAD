@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     android:orientation="vertical"
     tools:context=".alarms.fragments.CreateAlarmFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
 
         <TextView
             android:id="@+id/fragment_createalarm_scheduleAlarmHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/background_color"
             android:text="@string/set_alarm_time"
-            android:textColor="@color/textColor"
-            android:textSize="21sp"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/button_colors"
+            android:textColorHighlight="@color/background_color"
+            android:textColorLink="@color/button_colors"
+            android:textSize="34sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
         <LinearLayout
             android:id="@+id/fragment_createalarm_timePickerLayout"
@@ -34,25 +40,32 @@
                 android:id="@+id/fragment_createalarm_timePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:amPmBackgroundColor="@color/single_element_text_color"
+                android:background="@color/background_color"
+                android:headerBackground="@color/single_element_color"
+                android:numbersSelectorColor="@color/single_element_color"
                 android:timePickerMode="clock" />
+
         </LinearLayout>
 
         <EditText
             android:id="@+id/fragment_createalarm_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/single_element_color"
             android:hint="Alarm Title"
-            android:textColorHint="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout"
-            android:autofillHints="" />
+            android:textColorHint="@color/single_element_text_color"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/single_element_color"
             android:checked="false"
             android:text="@string/recurring_alarm"
-            android:textColor="@color/textColor"
+            android:textColor="@color/single_element_text_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
 
@@ -62,162 +75,178 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="gone"
+            android:background="@color/background_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_recurring">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkMon"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Mon"
-                    android:textOn="Mon"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg"/>
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Mon"
+                    android:textOn="Mon" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkTue"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Tue"
-                    android:textOn="Tue"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg" />
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Tue"
+                    android:textOn="Tue" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkWed"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Wed"
-                    android:textOn="Wed"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg" />
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Wed"
+                    android:textOn="Wed" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkThu"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Thu"
-                    android:textOn="Thu"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg"/>
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Thu"
+                    android:textOn="Thu" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkFri"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Fri"
-                    android:textOn="Fri"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg" />
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Fri"
+                    android:textOn="Fri" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkSat"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Sat"
-                    android:textOn="Sat"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg"/>
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Sat"
+                    android:textOn="Sat" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkSun"
+                    style="@style/toggleButton"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:textOff="Sun"
-                    android:textOn="Sun"
                     android:layout_margin="3dp"
-                    style="@style/toggleButton"
-                    android:background="@drawable/toggle_bg"/>
+                    android:background="@drawable/toggle_bg"
+                    android:textOff="Sun"
+                    android:textOn="Sun" />
             </LinearLayout>
         </HorizontalScrollView>
+
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
             android:id="@+id/fragment_createalarm_card_sound"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_recurring_options"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:cardCornerRadius="6dp"
-            app:cardElevation="6dp"
-            android:layout_marginTop="18dp">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/fragment_createalarm_sound">
-            <TextView
-                android:id="@+id/fragment_createalarm_setTone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alarm Sound"
-                android:textSize="21sp"
-                android:textColor="@color/textColor"
-                android:layout_margin="6dp"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                tools:layout_editor_absoluteX="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-            <TextView
-                android:id="@+id/fragment_createalarm_setToneName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alarm Sound"
-                android:textSize="13sp"
-                android:textColor="@color/textColor"
-                android:layout_margin="6dp"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                tools:layout_editor_absoluteX="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fragment_createalarm_setTone"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:id="@+id/fragment_createalarm_card_vibrate"
             android:layout_marginTop="18dp"
             app:cardCornerRadius="6dp"
             app:cardElevation="6dp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_card_sound"
+            android:background="@color/background_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_recurring_options">
+
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_createalarm_sound"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/fragment_createalarm_vibrate">
+                android:background="@color/single_element_color">
+
                 <TextView
-                    android:id="@+id/fragment_createalarm_vibrateText"
+                    android:id="@+id/fragment_createalarm_setTone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vibrate"
-                    android:textSize="21sp"
-                    android:textColor="@color/textColor"
                     android:layout_margin="6dp"
+                    android:text="Alarm Sound"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    tools:layout_editor_absoluteX="0dp"
+                    android:textColor="@color/single_element_text_color"
+                    android:textSize="21sp"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/fragment_createalarm_setToneName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:text="Alarm Sound"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/single_element_text_color"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fragment_createalarm_setTone"
+                    tools:layout_editor_absoluteX="0dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fragment_createalarm_card_vibrate"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="18dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_card_sound">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_createalarm_vibrate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/single_element_color">>
                 <Switch
                     android:id="@+id/fragment_createalarm_vibrate_switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="3dp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.378" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/fragment_createalarm_vibrateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:text="Vibrate"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/single_element_text_color"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
+
         </androidx.cardview.widget.CardView>
 
         <Button
@@ -225,18 +254,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="3dp"
             android:layout_marginTop="27dp"
-            android:background="@drawable/shape_oval_filled"
-            android:fontFamily="monospace"
-            android:text="@string/schedule_alarm"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="sans-serif"
+            android:text="Schedule alarm"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:backgroundTint="@color/button_colors"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_card_vibrate" />
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_card_vibrate"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>

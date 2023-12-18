@@ -1,5 +1,7 @@
 package ooad.timewise.alarms.fragments;
 
+import static ooad.timewise.ActivitiesUtils.switchToActivity;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,10 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import ooad.timewise.R;
+import ooad.timewise.StartPageActivity;
 import ooad.timewise.alarms.adapter.AlarmRecyclerViewAdapter;
 import ooad.timewise.alarms.model.Alarm;
 import ooad.timewise.alarms.util.OnToggleAlarmListener;
@@ -52,12 +56,17 @@ public class AlarmsListFragment extends Fragment implements OnToggleAlarmListene
         alarmsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         alarmsRecyclerView.setAdapter(alarmRecyclerViewAdapter);
 
-        FloatingActionButton addAlarm = fragmentAlarmsListBinding.fragmentListalarmsAddAlarm;
+        Button addAlarm = fragmentAlarmsListBinding.fragmentListalarmsAddAlarm;
         addAlarm.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_alarmsListFragment_to_createAlarmFragment));
 
+        Button back = fragmentAlarmsListBinding.backBtn;
+        back.setOnClickListener(this::clickOnBackBtn);
         return view;
     }
 
+    private void clickOnBackBtn(View v) {
+        switchToActivity(StartPageActivity.class, this.getContext());
+    }
     @Override
     public void onToggle(Alarm alarm) {
         if (alarm.isStarted()) {

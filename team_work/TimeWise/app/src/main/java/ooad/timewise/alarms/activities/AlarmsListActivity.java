@@ -24,11 +24,11 @@ public class AlarmsListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // createNotificationChannel();
+        createNotificationChannel();
         setContentView(R.layout.alarms_list);
 
-//        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        edit = sharedPreferences.edit();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        edit = sharedPreferences.edit();
 
        // Button backBtn = findViewById(R.id.alarms_back_btn);
 
@@ -44,7 +44,6 @@ public class AlarmsListActivity extends AppCompatActivity {
                 "Service Channel",
                 NotificationManager.IMPORTANCE_HIGH
         );
-
 
         NotificationManager manager = getSystemService(NotificationManager.class);
         manager.createNotificationChannel(serviceChannel);
