@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/get_cat_cheerup_text"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/get_quote_cheerup_btn"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/get_quote_cheerup_text"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/cheerup_back_btn"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/go_back_to_start_page"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
     </LinearLayout>
 
     <TextView

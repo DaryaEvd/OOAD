@@ -258,7 +258,7 @@
             android:layout_marginBottom="3dp"
             android:fontFamily="sans-serif"
             android:text="Schedule alarm"
-            android:textColor="@color/white"
+            android:textColor="@color/button_text_color"
             android:textStyle="bold"
             android:backgroundTint="@color/button_colors"
             app:layout_constraintBottom_toBottomOf="parent"

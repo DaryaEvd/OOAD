@@ -67,7 +67,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </receiver>
-        <!-- second BroadcastReceiver - will schedule and make the alarm (Notification) -->
+<!--         second BroadcastReceiver - will schedule and make the alarm (Notification) -->
          <receiver android:name=".calendar.MyNotification"
             android:exported="false">
             <intent-filter>
@@ -80,13 +80,12 @@
         <activity android:name=".calendar.ViewModel.DisplayTasksView"
             android:exported="false"/>
         <activity
-
             android:name=".calendar.ViewModel.MainView"
-            android:exported="true"
+            android:exported="false"
             android:label="Calendar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
 

@@ -91,7 +91,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
     private void startMainView(){
         this.setContentView(R.layout.layout_main_view);
 
-//        changePageSound = MediaPlayer.create(this, R.raw.change_page_sound_short_test); // TODO: delete
+        changePageSound = MediaPlayer.create(this, R.raw.change_page_sound_short_test); // TODO: delete
 
         activityResultLauncher = initActivityResultLauncher();
         initButtons();
@@ -111,8 +111,10 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
                         // Add task View
                         assert result.getData() != null;
                         Bundle data = result.getData().getExtras();
+                        assert data != null;
                         MyCalendarEvent event = (MyCalendarEvent) data.get("event");
                         long id = mainController.addEvent(event);
+                        assert event != null;
                         event.setId(id);
                         addEventToDay();
 
@@ -124,6 +126,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
                         assert result.getData() != null;
                         Bundle data = result.getData().getExtras();
 
+                        assert data != null;
                         selectedDate = (LocalDate) data.get("selectedDate");
                         valuesOfCurrentMonth = mainController.getMonthValues(selectedDate);
                         setMonthView();

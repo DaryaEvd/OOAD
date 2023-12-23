@@ -701,7 +701,7 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/dark_blue"
         android:text="@string/add_task"
-        android:textColor="@color/white"
+        android:textColor="@color/button_text_color"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
@@ -714,7 +714,7 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/dark_blue"
         android:text="@string/display_task"
-        android:textColor="@color/white"
+        android:textColor="@color/button_text_color"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
