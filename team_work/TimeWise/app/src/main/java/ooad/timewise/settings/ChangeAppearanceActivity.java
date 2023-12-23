@@ -26,16 +26,30 @@ public class ChangeAppearanceActivity extends AppCompatActivity {
         switchToYellowOrangeThemeBtn.setOnClickListener(this::clickOnYellowOrangeThemeBtn);
     }
 
-    private void clickOnDarkThemeBtn(View v){
-        appearanceManager.saveTheme(this, getString(R.string.dark_theme));
-        ActivitiesUtils.showInfo("Please, restart app", this);
-    }
-    private void clickOnYellowOrangeThemeBtn(View v){
-        appearanceManager.saveTheme(this, getString(R.string.yellow_orange_theme));
-        ActivitiesUtils.showInfo("Please, restart app", this);
+    private void clickOnDarkThemeBtn(View v) {
+        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.dark_theme))) {
+            appearanceManager.saveTheme(this, getString(R.string.dark_theme));
+            ActivitiesUtils.showInfo("Please, confirm your password", this);
+            appearanceManager.applyCurrentTheme(this); // Apply the theme without recreating the activity
+        } else {
+            ActivitiesUtils.showInfo("You already have the Dark theme", this);
+        }
+
+//        appearanceManager.saveTheme(this, getString(R.string.dark_theme));
+//        appearanceManager.applyCurrentTheme(this); // Apply the theme without recreating the activity
     }
 
-    private void clickOnBackBtn(View v){
+    private void clickOnYellowOrangeThemeBtn(View v) {
+        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.yellow_orange_theme))) {
+            appearanceManager.saveTheme(this, getString(R.string.yellow_orange_theme));
+            ActivitiesUtils.showInfo("Please, confirm your password", this);
+            appearanceManager.applyCurrentTheme(this);
+        } else {
+            ActivitiesUtils.showInfo("You already have the Light theme", this);
+        }
+    }
+
+    private void clickOnBackBtn(View v) {
         ActivitiesUtils.switchToActivity(SettingsActivity.class, this);
     }
 }

@@ -31,4 +31,15 @@ public class AppearanceManager {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
     }
+
+
+    public void applyCurrentTheme(Context context) {
+        switchToCurrentTheme(context);
+    }
+
+    public String getCurrentTheme(Context context) {
+        SharedPreferences themePref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_THEME, MODE_PRIVATE);
+        return themePref.getString(KEY, "");
+    }
+
 }
