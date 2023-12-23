@@ -60,9 +60,6 @@
     <string name="snooze">Snooze</string>
     <string name="todo">TODO</string>
 
-
-
-
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
     <string name="display_task">DISPLAY TASK</string>
@@ -108,4 +105,6 @@
     <string name="edit_all_events">all Events</string>
     <string name="edit_only_this">this Event</string>
 
+    <string name="yellow_orange_theme">yot</string>
+    <string name="dark_theme">dt</string>
 </resources>

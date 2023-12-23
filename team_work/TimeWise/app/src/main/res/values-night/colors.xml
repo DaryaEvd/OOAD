@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
-<!--    <color name="background_color">#000000</color>-->
-<!--    <color name="button_colors">#712912</color>-->
-<!--    <color name="single_element_text_color">#4E3229</color>-->
-
-<!--    <color name="button_text_color">#B8B6B5</color>-->
-<!--    <color name="translucent_grey">#D38F8E8E</color>-->
-<!--    <color name="single_element_color">#B9676767</color>-->
-=======
     <color name="background_color">#000000</color>
     <color name="button_colors">#712912</color>
     <color name="single_element_text_color">#4E3229</color>
@@ -16,5 +7,4 @@
     <color name="button_text_color">#B8B6B5</color>
     <color name="translucent_grey">#D38F8E8E</color>
     <color name="single_element_color">#B9676767</color>
->>>>>>> 681b65bd3663a73ec6a9b77553d875a2b5fad66b
 </resources>
