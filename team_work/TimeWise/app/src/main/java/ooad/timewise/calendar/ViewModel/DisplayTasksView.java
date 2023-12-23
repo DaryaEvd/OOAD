@@ -91,7 +91,7 @@ public class DisplayTasksView extends AppCompatActivity implements View.OnClickL
                 (this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
                 PopupMenu popupMenu = new PopupMenu(DisplayTasksView.this, view);
-                popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu_calendar, popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(item -> {
                     int id = item.getItemId();
                     event = eventsThisDay.get(position);
