@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ooad.timewise.alarms.activities.AlarmsListActivity;
 import ooad.timewise.calendar.CalendarActivity;
+import ooad.timewise.calendar.ViewModel.MainView;
 import ooad.timewise.cheerup.CheerUpActivity;
 import ooad.timewise.notes.NotesListActivity;
 import ooad.timewise.settings.SettingsActivity;
@@ -37,7 +38,8 @@ public class StartPageActivity extends AppCompatActivity {
     }
 
     private void clickOnCalendarBtn(View v) {
-        switchToActivity(CalendarActivity.class, this);
+//        switchToActivity(CalendarActivity.class, this);
+        switchToActivity(MainView.class, this);
     }
 
     private void clickOnAlarmsBtn(View v) {

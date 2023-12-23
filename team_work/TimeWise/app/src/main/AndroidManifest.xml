@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
@@ -53,6 +54,41 @@
 
         <service android:name=".alarms.service.AlarmService" />
         <service android:name=".alarms.service.RescheduleAlarmsService" />
+
+
+        <!-- first BroadcastReceiver - active on Device restart -->
+        <receiver android:name=".calendar.DeviceRestart"
+            android:exported="true"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <!-- second BroadcastReceiver - will schedule and make the alarm (Notification) -->
+         <receiver android:name=".calendar.MyNotification"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".calendar.ViewModel.AddTaskView"
+            android:exported="false"/>
+        <activity android:name=".calendar.ViewModel.DisplayTasksView"
+            android:exported="false"/>
+        <activity
+
+            android:name=".calendar.ViewModel.MainView"
+            android:exported="true"
+            android:label="Calendar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
