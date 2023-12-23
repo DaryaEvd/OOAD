@@ -10,6 +10,7 @@ import ooad.timewise.ActivitiesUtils;
 import ooad.timewise.R;
 import ooad.timewise.StartPageActivity;
 
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +24,8 @@ public class SettingsActivity extends AppCompatActivity {
         switchToChangeAppearanceBtn.setOnClickListener(this::clickSwitchAppearanceBtn);
         Button switchToChangeLanguageBtn = findViewById(R.id.change_language_btn);
         switchToChangeLanguageBtn.setOnClickListener(this::clickSwitchLanguageBtn);
+        Button switchToChangePasswordBtn = findViewById(R.id.change_password_btn);
+        switchToChangePasswordBtn.setOnClickListener(this::clickSwitchChangePasswordBtn);
     }
 
     private void clickOnBackBtn(View v){
@@ -31,6 +34,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void clickSwitchAppearanceBtn(View v){
         ActivitiesUtils.switchToActivity(ChangeAppearanceActivity.class, this);
+    }
+    private void clickSwitchChangePasswordBtn(View v){
+        ActivitiesUtils.switchToActivity(ChangePasswordActivity.class, this);
     }
     private void clickSwitchLanguageBtn(View v){
         ActivitiesUtils.switchToActivity(ChangeLanguageActivity.class, this);

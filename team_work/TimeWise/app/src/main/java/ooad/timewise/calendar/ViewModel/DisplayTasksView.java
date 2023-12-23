@@ -243,7 +243,7 @@ public class DisplayTasksView extends AppCompatActivity implements View.OnClickL
         chooseDateWithCalendar.setCancelable(true);
         chooseDateWithCalendar.setCanceledOnTouchOutside(true);
 
-        chooseDateWithCalendar.setContentView(R.layout.layout_main_choose_date);
+        chooseDateWithCalendar.setContentView(R.layout.layout_calendar_choose_date);
 
         calendarView = chooseDateWithCalendar.findViewById(R.id.cv_choose_date);
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) ->

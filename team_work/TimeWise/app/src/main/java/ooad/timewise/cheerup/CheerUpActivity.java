@@ -16,10 +16,10 @@ public class CheerUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cheer_up_page);
+        setContentView(R.layout.cheer_up_layout);
 
         Button showCatBtn = findViewById(R.id.get_cat_cheerup_btn);
-        Button showQuoteBtn = findViewById(R.id.get_quote_cheerup_btn);
+        Button showQuoteBtn = findViewById(R.id.get_quote);
         Button backBtn = findViewById(R.id.cheerup_back_btn);
 
         showCatBtn.setOnClickListener(this::clickOnShowCatBtn);

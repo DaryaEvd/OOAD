@@ -28,10 +28,12 @@
             android:name=".alarms.activities.AlarmsListActivity"
             android:exported="true"
             />
-        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".settings.ChangeLanguageActivity"/>
         <activity android:name=".notes.NotesTakerActivity" />
         <activity android:name=".cheerup.CatPictureActivity"/>
         <activity android:name=".cheerup.QuoteActivity"/>
+        <activity android:name=".settings.ChangePasswordActivity"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

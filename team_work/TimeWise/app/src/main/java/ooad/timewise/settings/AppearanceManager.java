@@ -4,28 +4,39 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 
 import androidx.appcompat.app.AppCompatDelegate;
+
+import java.util.Locale;
 
 import ooad.timewise.R;
 
 public class AppearanceManager {
-    final static String KEY = "theme";
-    final static String SHARED_PREF_NAME_FOR_THEME = "Theme";
+    final static String THEME_KEY = "theme";
+    public final static String LANGUAGE_KEY = "language";
+    public final static String SHARED_PREF_NAME_FOR_THEME = "Appearance";
 
-    public void saveTheme(Context context, String theme){
+    public void saveTheme(Context context, String theme) {
         SharedPreferences passwordPref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_THEME, MODE_PRIVATE);
         SharedPreferences.Editor passwordEditor = passwordPref.edit();
-        passwordEditor.putString(KEY, theme);
+        passwordEditor.putString(THEME_KEY, theme);
         passwordEditor.apply();
     }
 
-    public void switchToCurrentTheme(Context context){
+    public void saveLanguage(Context context, String language) {
+        SharedPreferences passwordPref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_THEME, MODE_PRIVATE);
+        SharedPreferences.Editor passwordEditor = passwordPref.edit();
+        passwordEditor.putString(LANGUAGE_KEY, language);
+        passwordEditor.apply();
+    }
+
+    public void switchToCurrentTheme(Context context) {
         SharedPreferences themePref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_THEME, MODE_PRIVATE);
 
-        String actualTheme = themePref.getString(KEY, "");
+        String actualTheme = themePref.getString(THEME_KEY, "");
 
-        if (actualTheme.equals(context.getString(R.string.yellow_orange_theme))){
+        if (actualTheme.equals(context.getString(R.string.yellow_orange_theme))) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -39,7 +50,7 @@ public class AppearanceManager {
 
     public String getCurrentTheme(Context context) {
         SharedPreferences themePref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_THEME, MODE_PRIVATE);
-        return themePref.getString(KEY, "");
+        return themePref.getString(THEME_KEY, "");
     }
 
 }

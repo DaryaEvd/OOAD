@@ -10,13 +10,12 @@ import ooad.timewise.ActivitiesUtils;
 import ooad.timewise.R;
 
 public class ChangeAppearanceActivity extends AppCompatActivity {
-
     private static final AppearanceManager appearanceManager = new AppearanceManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.change_appearance_page);
+        setContentView(R.layout.changing_appearance_layout);
 
         Button backBtn = findViewById(R.id.change_appearance_back_btn);
         backBtn.setOnClickListener(this::clickOnBackBtn);
@@ -30,7 +29,7 @@ public class ChangeAppearanceActivity extends AppCompatActivity {
         if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.dark_theme))) {
             appearanceManager.saveTheme(this, getString(R.string.dark_theme));
             ActivitiesUtils.showInfo("Please, confirm your password", this);
-            appearanceManager.applyCurrentTheme(this); // Apply the theme without recreating the activity
+            appearanceManager.applyCurrentTheme(this);
         } else {
             ActivitiesUtils.showInfo("You already have the Dark theme", this);
         }

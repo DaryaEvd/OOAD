@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
-            android:text="@string/go_back_to_start_page"
+            android:text="@string/back_btn_text"
             android:textColor="@color/button_text_color" />
     </LinearLayout>
 
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/notes_page_text"
+        android:text="@string/notes"
         android:textColor="@color/button_colors"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

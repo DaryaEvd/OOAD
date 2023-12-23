@@ -89,7 +89,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void startMainView(){
-        this.setContentView(R.layout.layout_main_view);
+        this.setContentView(R.layout.layout_calendar_view);
 
         changePageSound = MediaPlayer.create(this, R.raw.change_page_sound_short_test); // TODO: delete
 
@@ -226,7 +226,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         chooseDateWithCalendar.setCancelable(true);
         chooseDateWithCalendar.setCanceledOnTouchOutside(true);
 
-        chooseDateWithCalendar.setContentView(R.layout.layout_main_choose_date);
+        chooseDateWithCalendar.setContentView(R.layout.layout_calendar_choose_date);
 
         calendarView = chooseDateWithCalendar.findViewById(R.id.cv_choose_date);
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) ->

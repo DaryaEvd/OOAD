@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/button_colors"
+    android:background="@color/background_color"
 android:id="@+id/linearLayout"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
@@ -12,9 +12,9 @@ tools:context=".alarms.activities.RingActivity">
     android:id="@+id/textView"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="Ring Ring"
+    android:text="@string/ring_ring"
     android:textAlignment="center"
-    android:textColor="@color/button_text_color"
+    android:textColor="@color/single_element_text_color"
     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -38,20 +38,22 @@ tools:context=".alarms.activities.RingActivity">
     android:text="@string/dismiss"
     android:layout_marginBottom="7dp"
     android:textColor="@color/button_text_color"
-    android:background="@color/translucent_grey"
+    android:backgroundTint="@color/button_colors"
     app:layout_constraintBottom_toTopOf="@+id/activity_ring_snooze"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
 
-<Button
-    android:id="@+id/activity_ring_snooze"
-    android:layout_width="0dp"
-    android:layout_height="300dp"
-    android:text="@string/snooze"
-    android:textColor="@color/button_text_color"
-    android:background="@color/translucent_grey"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/activity_ring_snooze"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:backgroundTint="@color/single_element_color"
+        android:text="@string/snooze"
+        android:textColor="@color/button_text_color"
+        android:textColorHighlight="@color/background_color"
+        android:textColorLink="@color/background_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

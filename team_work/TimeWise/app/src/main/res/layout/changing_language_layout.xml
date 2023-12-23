@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="Choose theme"
+        android:text="@string/choose_language"
         android:textColor="@color/button_colors"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,8 +22,8 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <LinearLayout
-        android:layout_width="309dp"
-        android:layout_height="269dp"
+        android:layout_width="315dp"
+        android:layout_height="197dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,27 +33,19 @@
         app:layout_constraintVertical_bias="0.37">
 
         <Button
-            android:id="@+id/switch_to_dark_theme_btn"
+            android:id="@+id/switch_to_en_language"
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:backgroundTint="@color/button_colors"
-            android:text="Switch to dark theme"
+            android:text="@string/english"
             android:textColor="@color/button_text_color" />
 
         <Button
-            android:id="@+id/switch_to_orange_yellow_theme"
+            android:id="@+id/switch_to_rus_language"
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:backgroundTint="@color/button_colors"
-            android:text="Switch to orange-yellow theme"
-            android:textColor="@color/button_text_color" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:backgroundTint="@color/button_colors"
-            android:text="Switch to ... theme"
+            android:text="@string/rus"
             android:textColor="@color/button_text_color" />
 
         <Button
@@ -61,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:backgroundTint="@color/button_colors"
-            android:text="Back"
+            android:text="@string/back_btn_text"
             android:textColor="@color/button_text_color" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

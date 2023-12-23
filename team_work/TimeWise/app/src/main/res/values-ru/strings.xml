@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">TimeWise</string>
+
+    <string name="calendar">Календарь</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выйти</string>
+    <string name="save_password">Сохранить пароль</string>
+    <string name="continue_text">Продолжить</string>
+
+    <string name="welcome_to_timewise">Добро пожаловать в\nTimeWise!</string>
+
+    <string name="cheer_up">Поднять настроение</string>
+
+    <string name="notes">Заметки</string>
+    <string name="add_note_text">Добавить заметки</string>
+
+    <string name="add_alarm">Добавить будильник</string>
+    <string name="enter_password_hint">Введите пароль</string>
+    <string name="enter_new_password_hint">Введите новый пароль</string>
+    <string name="confirm_password_hint">Подтвердите пароль</string>
+
+    <string name="get_cat">Получить котика</string>
+    <string name="get_quote">Получить цитату</string>
+    <string name="cheerup_page_text">Поднимите свое настроение!</string>
+
+    <string name="change_appearance">Изменить внешний вид</string>
+    <string name="change_language">Изменить язык</string>
+    <string name="enter_text">Введите текст</string>
+    <string name="title">Введите заголовок</string>
+    <string name="delete">Удалить</string>
+
+    <string name="one_more_btn_text">Еще</string>
+    <string name="back_btn_text">Назад</string>
+
+    <string name="text_of_quote">Здесь текст для цитаты</string>
+    <string name="author_name">Имя автора</string>
+
+    <string name="arg_alarm_obj">AlarmObject</string>
+    <string name="bundle_alarm_obj">BundleAlarmObject</string>
+    <string name="alarms">Будильники</string>
+    <string name="set_alarm_time">Настройка времени будильника</string>
+    <string name="recurring_alarm">Повторение</string>
+    <string name="schedule_alarm">Запланировать будильник</string>
+    <string name="dismiss">Отменить</string>
+    <string name="snooze">Отложить</string>
+    <string name="todo">TODO</string>
+
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
+    <string name="display_task">DISPLAY TASK</string>
+    <string name="add_task">Добавить задачу</string>
+
+    <string name="Monday">ПОН</string>
+    <string name="Tuesday">ВТ</string>
+    <string name="Wednesday">СР</string>
+    <string name="Thursday">ЧТ</string>
+    <string name="Friday">ПТ</string>
+    <string name="Saturday">СБ</string>
+    <string name="Sunday">ВС</string>
+
+    <string name="MonthMessage">%s %d</string>
+
+    <string name="enter_task_name">Введите название задачи:</string>
+    <string name="set_time">Поставить время</string>
+    <string name="set_reminder">Поставить напоминание</string>
+    <string name="repeat">ПОВТОРИТЬ</string>
+    <string name="cancel">Отменить</string>
+    <string name="submit">SUBMIT</string>
+    <string name="task_name">Имя задачи</string>
+    <string name="change_event">Редактировать событие</string>
+    <string name="delete_event">Удалить событие</string>
+    <string name="repeat_for">Повторить для</string>
+    <string name="days">Дни.</string>
+    <string name="months">Месяцы.</string>
+    <string name="years">Года.</string>
+    <string name="weeks">Недели.</string>
+    <string name="reminder_5">поставить напоминание за 2 дня до</string>
+    <string name="reminder_4">поставить напоминание за 1 день до</string>
+    <string name="reminder_3">поставить напоминание за 1 час до</string>
+    <string name="reminder_2">поставить напоминание за 30 минут до</string>
+    <string name="reminder_1">поставить напоминание за 5 минут до</string>
+    <string name="autostart_permission">Do you want to allow this app to have autostart Permissions? If not the app will not be able to function perfectly.</string>
+    <string name="deny_permission">Запретить</string>
+    <string name="allow_permission">Разрешить</string>
+    <string name="dont_show_again_cb">не показывать снова</string>
+    <string name="repeating_event_edit">This is a repeating Event. Do you want to edit all Events or only this one?</string>
+    <string name="repeating_event_remove">This is a repeating Event. Do you want to remove all Events or only this one?</string>
+    <string name="remove_all_events">все события</string>
+    <string name="remove_only_this">это событие</string>
+    <string name="edit_all_events">все события</string>
+    <string name="edit_only_this">это событие</string>
+
+    <string name="yellow_orange_theme">yot</string>
+    <string name="dark_theme">dt</string>
+    <string name="choose_theme">Выберите тему</string>
+    <string name="switch_to_dark_theme">Изменить на темную тему</string>
+    <string name="switch_to_orange_yellow_theme">Изменить на желто-оранжевую тему</string>
+    <string name="time">время</string>
+    <string name="alarm_title">Заголовок будильника</string>
+    <string name="mon">Пн</string>
+    <string name="tue">Вт</string>
+    <string name="wed">Ср</string>
+    <string name="thu">Чт</string>
+    <string name="fri">Пт</string>
+    <string name="sat">Сб</string>
+    <string name="sun">Вс</string>
+    <string name="alarm_sound">Мелодия будильника</string>
+    <string name="vibrate">Вибрация</string>
+    <string name="feb_2021">Feb 2021</string>
+    <string name="snozz_off">Snozz off</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="_90_charging">90% Charging</string>
+    <string name="ring_ring">Ring Ring</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="title_text">Заголовок</string>
+    <string name="note_text">Текст заметки</string>
+    <string name="date">Дата</string>
+
+    <string name="choose_language">Выберите язык</string>
+</resources>

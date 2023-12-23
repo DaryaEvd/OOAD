@@ -30,7 +30,7 @@
                 android:padding="8dp"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="Title"
+                android:text="@string/title_text"
                 android:textColor="@color/single_element_text_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:maxLines="10"
             android:padding="8dp"
-            android:text="Note text"
+            android:text="@string/note_text"
             android:textColor="@color/single_element_text_color"
             android:textSize="14sp"
             android:textStyle="normal" />
@@ -57,7 +57,7 @@
             android:padding="8dp"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:text="Date"
+            android:text="@string/date"
             android:textColor="@color/button_text_color"
             android:textSize="14sp"
             android:textStyle="normal" />

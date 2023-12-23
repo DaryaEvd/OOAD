@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutSettings"
-        android:layout_width="278dp"
-        android:layout_height="140dp"
+        android:layout_width="280dp"
+        android:layout_height="206dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,22 +24,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
-            android:text="@string/change_appearance_text"
+            android:text="@string/change_appearance"
             android:textColor="@color/button_text_color" />
+
         <Button
             android:id="@+id/change_language_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
-            android:text="@string/change_language_text"
+            android:text="@string/change_language"
             android:textColor="@color/button_text_color" />
+
+        <Button
+            android:id="@+id/change_password_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/button_colors"
+            android:text="@string/change_password"
+            android:textColor="@color/button_text_color" />
+
         <Button
             android:id="@+id/settings_go_to_start_page_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
-            android:text="@string/go_back_to_start_page"
+            android:text="@string/back_btn_text"
             android:textColor="@color/button_text_color" />
+
     </LinearLayout>
 
     <TextView
@@ -47,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/setting_page_text"
+        android:text="@string/settings"
         android:textColor="@color/button_colors"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

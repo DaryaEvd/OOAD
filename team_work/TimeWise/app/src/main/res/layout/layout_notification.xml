@@ -13,7 +13,7 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="Snozz off" />
+            android:text="@string/snozz_off" />
         <ImageView
             android:id="@+id/icon"
             android:layout_width="60dp"
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="Flashlight"
+                android:text="@string/flashlight"
                 android:textColor="#000000"
                 android:textSize="13sp" />
             <TextView
@@ -43,7 +43,7 @@
                 android:layout_below="@+id/message"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="3dp"
-                android:text="90% Charging"
+                android:text="@string/_90_charging"
                 android:textColor="#000000"
                 android:textSize="13sp" />
         </RelativeLayout>

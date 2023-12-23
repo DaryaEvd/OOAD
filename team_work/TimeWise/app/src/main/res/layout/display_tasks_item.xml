@@ -25,7 +25,7 @@
         android:layout_toEndOf="@id/display_tasks_item_icon"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:text="Title"/>
+        android:text="@string/title_text"/>
 
     <TextView
         android:id="@+id/display_tasks_item_time"
@@ -34,6 +34,6 @@
         android:layout_below="@+id/display_tasks_item_title"
         android:layout_toEndOf="@id/display_tasks_item_icon"
         android:textColor="@color/black"
-        android:text="time"/>
+        android:text="@string/time"/>
 
 </RelativeLayout>

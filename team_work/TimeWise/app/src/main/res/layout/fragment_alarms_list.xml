@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/button_colors"
-                android:text="@string/add_alarm_text"
+                android:text="@string/add_alarm"
                 android:textColor="@color/button_text_color" />
 
             <Button
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/button_colors"
-                android:text="@string/go_back_to_start_page"
+                android:text="@string/back_btn_text"
                 android:textColor="@color/button_text_color" />
         </LinearLayout>
 
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/alarms_page_text"
+            android:text="@string/alarms"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/button_colors"

@@ -20,7 +20,7 @@ public class QuoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quote_show_page);
+        setContentView(R.layout.quote_show_layout);
 
         Button backButton = findViewById(R.id.backQuoteButton);
         backButton.setOnClickListener(this::clickOnBackBtn);

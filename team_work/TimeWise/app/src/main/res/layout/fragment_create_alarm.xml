@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:background="@color/single_element_color"
-            android:hint="Alarm Title"
+            android:hint="@string/alarm_title"
             android:textColorHint="@color/single_element_text_color"
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
@@ -90,8 +90,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Mon"
-                    android:textOn="Mon" />
+                    android:textOff="@string/mon"
+                    android:textOn="@string/mon" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkTue"
@@ -100,8 +100,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Tue"
-                    android:textOn="Tue" />
+                    android:textOff="@string/tue"
+                    android:textOn="@string/tue" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkWed"
@@ -110,8 +110,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Wed"
-                    android:textOn="Wed" />
+                    android:textOff="@string/wed"
+                    android:textOn="@string/wed" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkThu"
@@ -120,8 +120,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Thu"
-                    android:textOn="Thu" />
+                    android:textOff="@string/thu"
+                    android:textOn="@string/thu" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkFri"
@@ -130,8 +130,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Fri"
-                    android:textOn="Fri" />
+                    android:textOff="@string/fri"
+                    android:textOn="@string/fri" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkSat"
@@ -140,8 +140,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Sat"
-                    android:textOn="Sat" />
+                    android:textOff="@string/sat"
+                    android:textOn="@string/sat" />
 
                 <ToggleButton
                     android:id="@+id/fragment_createalarm_checkSun"
@@ -150,8 +150,8 @@
                     android:layout_height="35dp"
                     android:layout_margin="3dp"
                     android:background="@drawable/toggle_bg"
-                    android:textOff="Sun"
-                    android:textOn="Sun" />
+                    android:textOff="@string/sun"
+                    android:textOn="@string/sun" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
-                    android:text="Alarm Sound"
+                    android:text="@string/alarm_sound"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/single_element_text_color"
@@ -192,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
-                    android:text="Alarm Sound"
+                    android:text="@string/alarm_sound"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/single_element_text_color"
@@ -237,7 +237,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
-                    android:text="Vibrate"
+                    android:text="@string/vibrate"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/single_element_text_color"
@@ -257,7 +257,7 @@
             android:layout_marginTop="27dp"
             android:layout_marginBottom="3dp"
             android:fontFamily="sans-serif"
-            android:text="Schedule alarm"
+            android:text="@string/schedule_alarm"
             android:textColor="@color/button_text_color"
             android:textStyle="bold"
             android:backgroundTint="@color/button_colors"

@@ -2,11 +2,14 @@ package ooad.timewise.password;
 
 import static ooad.timewise.ActivitiesUtils.showInfo;
 import static ooad.timewise.ActivitiesUtils.switchToActivity;
+import static ooad.timewise.password.PasswordManager.EMPTY_NEW_PASSWORD_MSG;
 import static ooad.timewise.password.PasswordManager.KEY;
+import static ooad.timewise.password.PasswordManager.NOT_EQUAL_PASSWORDS_MSG;
 import static ooad.timewise.password.PasswordManager.SHARED_PREF_NAME_FOR_PASSWORD;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -16,8 +19,6 @@ import ooad.timewise.R;
 import ooad.timewise.StartPageActivity;
 
 public class NewPasswordEnteringPageActivity extends AppCompatActivity {
-    private final static String NOT_EQUAL_PASSWORDS_MSG = "Passwords aren't equal :(";
-    private final static String EMPTY_NEW_PASSWORD_MSG = "Please, enter new password";
     private EditText confirmingNewPassword;
     private EditText enteredNewPassword;
 
@@ -32,26 +33,27 @@ public class NewPasswordEnteringPageActivity extends AppCompatActivity {
         enteredNewPassword = findViewById(R.id.entered_new_password);
 
         exitBtn.setOnClickListener(v -> finishAffinity());
-        saveBtn.setOnClickListener(v -> saveNewPassword());
+        saveBtn.setOnClickListener(this::saveNewPassword);
     }
 
-    private void saveNewPassword() {
-        if (enteredNewPassword.getText().toString().equals("")) {
+    private void saveNewPassword(View v){
+        saveNewPassword(enteredNewPassword.getText().toString(), confirmingNewPassword.getText().toString());
+    }
+
+    private void saveNewPassword(String enteredNewPassword, String confirmingNewPassword) {
+        if (enteredNewPassword.equals("")) {
             showInfo(EMPTY_NEW_PASSWORD_MSG, this);
             return;
         }
 
-        String newPassword = enteredNewPassword.getText().toString();
-        String confNewPassword = confirmingNewPassword.getText().toString();
-
-        if (!newPassword.equals(confNewPassword)) {
+        if (!enteredNewPassword.equals(confirmingNewPassword)) {
             showInfo(NOT_EQUAL_PASSWORDS_MSG, this);
             return;
         }
 
         SharedPreferences passwordPref = this.getSharedPreferences(SHARED_PREF_NAME_FOR_PASSWORD, MODE_PRIVATE);
         SharedPreferences.Editor passwordEditor = passwordPref.edit();
-        passwordEditor.putString(KEY, newPassword);
+        passwordEditor.putString(KEY, enteredNewPassword);
         passwordEditor.apply();
 
         switchToActivity(StartPageActivity.class, this);
