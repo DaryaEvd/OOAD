@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/button_colors"
                 android:text="@string/add_alarm_text"
-                android:textColor="@color/white" />
+                android:textColor="@color/button_text_color" />
 
             <Button
                 android:id="@+id/back_btn"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/button_colors"
                 android:text="@string/go_back_to_start_page"
-                android:textColor="@color/white" />
+                android:textColor="@color/button_text_color" />
         </LinearLayout>
 
         <TextView

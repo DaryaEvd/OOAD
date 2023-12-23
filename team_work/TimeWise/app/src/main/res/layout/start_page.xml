@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/to_cheer_up"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/notes_btn"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/to_notes_button"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/calendar_btn"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/to_calendar_button"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/alarms_btn"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/to_alarm_button"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/settings_btn"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/to_settings_button"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/exit_start_page_btn"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/button_colors"
             android:text="@string/exit_button"
-            android:textColor="@color/white" />
+            android:textColor="@color/button_text_color" />
     </LinearLayout>
 
     <TextView
