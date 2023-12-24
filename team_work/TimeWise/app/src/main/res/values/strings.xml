@@ -94,7 +94,7 @@
     <string name="dark_theme">dt</string>
     <string name="choose_theme">Choose theme</string>
     <string name="switch_to_dark_theme">Switch to dark theme</string>
-    <string name="switch_to_orange_yellow_theme">Switch to orange-yellow theme</string>
+    <string name="switch_to_orange_yellow_theme">Switch to light theme</string>
     <string name="time">time</string>
     <string name="alarm_title">Alarm Title</string>
     <string name="mon">Mon</string>
@@ -116,6 +116,11 @@
     <string name="note_text">Note text</string>
     <string name="date">Date</string>
     <string name="choose_language">Choose language</string>
+
+    <string name="confirm_password_dark">Please, confirm your password</string>
+    <string name="theme_already_set_dark">You already have the Dark theme</string>
+    <string name="theme_already_set_light">You already have the Light theme</string>
+
     <string name="english">English</string>
     <string name="rus">Русский</string>
 </resources>

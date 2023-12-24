@@ -11,6 +11,7 @@ import ooad.timewise.R;
 
 public class ChangeAppearanceActivity extends AppCompatActivity {
     private static final AppearanceManager appearanceManager = new AppearanceManager();
+    private static final LanguageManager langManager = new LanguageManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,25 +26,35 @@ public class ChangeAppearanceActivity extends AppCompatActivity {
         switchToYellowOrangeThemeBtn.setOnClickListener(this::clickOnYellowOrangeThemeBtn);
     }
 
+
     private void clickOnDarkThemeBtn(View v) {
-        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.dark_theme))) {
-            appearanceManager.saveTheme(this, getString(R.string.dark_theme));
-            ActivitiesUtils.showInfo("Please, confirm your password", this);
-            appearanceManager.applyCurrentTheme(this);
-        } else {
-            ActivitiesUtils.showInfo("You already have the Dark theme", this);
-        }
+        handleThemeChange(R.string.dark_theme, R.string.confirm_password_dark, R.string.theme_already_set_dark);
     }
 
     private void clickOnYellowOrangeThemeBtn(View v) {
-        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.yellow_orange_theme))) {
-            appearanceManager.saveTheme(this, getString(R.string.yellow_orange_theme));
-            ActivitiesUtils.showInfo("Please, confirm your password", this);
+        handleThemeChange(R.string.yellow_orange_theme, R.string.confirm_password_dark, R.string.theme_already_set_light);
+    }
+
+    private void handleThemeChange(int themeResId, int confirmMessageResId, int alreadySetMessageResId) {
+        String themeString = getString(themeResId);
+
+        if (!appearanceManager.getCurrentTheme(this).equals(themeString)) {
+            appearanceManager.saveTheme(this, themeString);
+            showPasswordConfirmationMessage(confirmMessageResId, alreadySetMessageResId);
             appearanceManager.applyCurrentTheme(this);
         } else {
-            ActivitiesUtils.showInfo("You already have the Light theme", this);
+            showPasswordConfirmationMessage(alreadySetMessageResId, alreadySetMessageResId);
         }
     }
+
+    private void showPasswordConfirmationMessage(int confirmMessageResId, int alreadySetMessageResId) {
+        int messageResId = (langManager.getCurrentLang(this).equals(getString(R.string.english)))
+                ? confirmMessageResId
+                : alreadySetMessageResId;
+
+        ActivitiesUtils.showInfo(getString(messageResId), this);
+    }
+
 
     private void clickOnBackBtn(View v) {
         ActivitiesUtils.switchToActivity(SettingsActivity.class, this);

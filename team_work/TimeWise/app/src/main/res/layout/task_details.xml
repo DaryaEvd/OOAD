@@ -57,7 +57,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:text="@string/enter_task_name"
-                            android:textColor="@color/black"
+                            android:textColor="@color/custom_red"
                             android:textSize="20sp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -77,17 +77,17 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/task_details_set_time_btn"
-                            android:layout_width="match_parent"
+                            android:layout_width="199dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
-                            android:layout_marginLeft="20dp"
                             android:background="@drawable/set_time_button_border"
                             android:text="@string/set_time"
                             android:textAlignment="center"
                             android:textAllCaps="false"
                             android:textColor="@color/black"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/tv_show_time"
@@ -142,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:text="@string/set_reminder"
-                            android:textColor="@color/black"
+                            android:textColor="@color/custom_purple"
                             android:textSize="20sp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent"

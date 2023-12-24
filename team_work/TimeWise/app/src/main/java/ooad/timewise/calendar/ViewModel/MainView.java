@@ -1,5 +1,7 @@
 package ooad.timewise.calendar.ViewModel;
 
+import static ooad.timewise.ActivitiesUtils.switchToActivity;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import ooad.timewise.R;
+import ooad.timewise.StartPageActivity;
 import ooad.timewise.calendar.Constants;
 import ooad.timewise.calendar.MainController;
 import ooad.timewise.calendar.model.MyCalendarEvent;
@@ -88,7 +91,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         this.startMainView();
     }
 
-    private void startMainView(){
+    private void startMainView() {
         this.setContentView(R.layout.layout_calendar_view);
 
         changePageSound = MediaPlayer.create(this, R.raw.change_page_sound_short_test); // TODO: delete
@@ -99,7 +102,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         initTextViewOnTouch();
     }
 
-    private ActivityResultLauncher<Intent> initActivityResultLauncher(){
+    private ActivityResultLauncher<Intent> initActivityResultLauncher() {
         /*
         used to launch an intent... addTaskView f.e.
          */
@@ -121,8 +124,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
                         selectedDate = (LocalDate) data.get("selectedDate");
                         valuesOfCurrentMonth = mainController.getMonthValues(selectedDate);
                         setMonthView();
-                    }
-                    else if (result.getResultCode() == 2){
+                    } else if (result.getResultCode() == 2) {
                         assert result.getData() != null;
                         Bundle data = result.getData().getExtras();
 
@@ -144,9 +146,11 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         goToPrevMonthBtn.setOnClickListener(this);
         findViewById(R.id.btn_add_task).setOnClickListener(this);
         findViewById(R.id.btn_display_task).setOnClickListener(this);
+
+        findViewById(R.id.btn_back_calendar).setOnClickListener(this);
     }
 
-    private void initMonthView(){
+    private void initMonthView() {
         /*
         init the month view
         set the textViews and add onTouchListener
@@ -163,13 +167,12 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         setMonthView();
     }
 
-    private void initTextViewList(){
+    private void initTextViewList() {
         /*
         add all textViews in the scene to allTextViews
          */
         TableLayout tableLayoutWeeks = findViewById(R.id.tl_weeks);
-        for (int week = 0; week < tableLayoutWeeks.getChildCount(); week++)
-        {
+        for (int week = 0; week < tableLayoutWeeks.getChildCount(); week++) {
             TableRow currentRow = (TableRow) tableLayoutWeeks.getChildAt(week);
             for (int day = 0; day < 7; day++) {
                 allTextViews.add((TextView) currentRow.getChildAt(day));
@@ -188,7 +191,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
                 selectedDate.getMonth().toString(), selectedDate.getYear()));
 
         valuesOfCurrentMonth = mainController.getMonthValues(selectedDate);
-        for (int index = 0; index < allTextViews.size(); index++){
+        for (int index = 0; index < allTextViews.size(); index++) {
             TextView currentTextView = allTextViews.get(index);
 
             // first value is the text color
@@ -199,17 +202,14 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
 
             // set text color
             if (currentEntry[0] == Constants.NOTTHISMONTHCOLOR ||
-                    currentEntry[0] == Constants.THISMONTHBUTGRAYCOLOR)
-            {
+                    currentEntry[0] == Constants.THISMONTHBUTGRAYCOLOR) {
                 currentTextView.setTextColor(getResources().getColor(
                         R.color.calendar_not_this_month_color, getTheme()));
-            }
-            else
-            {
+            } else {
                 currentTextView.setTextColor(getResources().getColor(
                         R.color.calendar_number_color, getTheme()));
                 if (Integer.parseInt((String) currentTextView.getText()) ==
-                        selectedDate.getDayOfMonth()){
+                        selectedDate.getDayOfMonth()) {
                     currentSelectedIndex = index;
                     currentSelectedTextView = currentTextView;
                 }
@@ -242,15 +242,13 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
             if (calendarSelectedDate.getYear() > currentDate.getYear()) {
                 after = true;
                 canGoPrev = true;
-                goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.blue));
-            }
-            else if (calendarSelectedDate.getYear() == currentDate.getYear() &&
+                goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.custom_red));
+            } else if (calendarSelectedDate.getYear() == currentDate.getYear() &&
                     calendarSelectedDate.getMonth().getValue() > currentDate.getMonth().getValue()) {
                 after = true;
                 canGoPrev = true;
-                goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.blue));
-            }
-            else if (calendarSelectedDate.getYear() == currentDate.getYear() &&
+                goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.custom_red));
+            } else if (calendarSelectedDate.getYear() == currentDate.getYear() &&
                     calendarSelectedDate.getMonth().getValue() == currentDate.getMonth().getValue() &&
                     calendarSelectedDate.getDayOfMonth() >= currentDate.getDayOfMonth()) {
                 after = true;
@@ -258,7 +256,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
                 canGoPrev = false;
                 goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.gray));
             }
-            if (after){
+            if (after) {
                 selectedDate = calendarSelectedDate;
                 setMonthView();
             }
@@ -266,7 +264,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         });
     }
 
-    private void goToNextMonth(int day){
+    private void goToNextMonth(int day) {
         /*
         go to the next month. if day is valid, select the date in the month there the day==day
          */
@@ -274,41 +272,39 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
 
         selectedDate = selectedDate.plusMonths(1);
         selectedDate = setToFirstOfMonth(selectedDate);
-        if (day > 0){
+        if (day > 0) {
             selectedDate = selectedDate.plusDays(day);
         }
         canGoPrev = true;
-        goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.blue));
+        goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.custom_red));
         setMonthView();
     }
 
-    private void goToPrevMonth(int day){
+    private void goToPrevMonth(int day) {
         /*
         go to previous month
         same as go to next month but it should be impossible to go to months which are in the past
         so we have to check if the change is valid
         Therefore we need the canGoPrev variable
          */
-        if (canGoPrev){
+        if (canGoPrev) {
             changePageSound.start();
 
             selectedDate = selectedDate.minusMonths(1);
             selectedDate = setToFirstOfMonth(selectedDate);
             LocalDate currentDate = LocalDate.now();
             if (selectedDate.getYear() == currentDate.getYear() &&
-                    selectedDate.getMonth() == currentDate.getMonth()){
+                    selectedDate.getMonth() == currentDate.getMonth()) {
                 canGoPrev = false;
                 goToPrevMonthBtn.setTextColor(ContextCompat.getColor(this, R.color.gray));
             }
-            if (day >= 0){
-                if (canGoPrev){
+            if (day >= 0) {
+                if (canGoPrev) {
                     selectedDate = selectedDate.plusDays(day);
-                }
-                else {
-                    if (day < currentDate.getDayOfMonth()){
+                } else {
+                    if (day < currentDate.getDayOfMonth()) {
                         selectedDate = currentDate;
-                    }
-                    else {
+                    } else {
                         selectedDate = selectedDate.plusDays(day);
                     }
                 }
@@ -316,7 +312,8 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
             setMonthView();
         }
     }
-    public LocalDate setToFirstOfMonth(LocalDate localDate){
+
+    public LocalDate setToFirstOfMonth(LocalDate localDate) {
         /*
         change the localDate to the first of the month
          */
@@ -325,14 +322,14 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         return localDate;
     }
 
-    private int getIndexOfTextview(TextView tv){
+    private int getIndexOfTextview(TextView tv) {
         /*
         for a textview return the corresponding index in values of current month
          */
         return allTextViews.indexOf(tv);
     }
 
-    private void addEventToDay(){
+    private void addEventToDay() {
         /*
         just change the colors of the selected Day
          */
@@ -341,21 +338,20 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private void initTextViewOnTouch(){
+    private void initTextViewOnTouch() {
         /*
         for all text views set the onTouchListener
         using the textViewClickListener method
          */
-        for (TextView currentTextView : allTextViews){
+        for (TextView currentTextView : allTextViews) {
             currentTextView.setOnTouchListener((view, motionEvent) -> {
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     startX = (int) motionEvent.getX();
                     startY = (int) motionEvent.getY();
-                }
-                else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     boolean slide = slideScreen(startX, startY,
                             (int) motionEvent.getX(), (int) motionEvent.getY());
-                    if (!slide){
+                    if (!slide) {
                         textViewClickListener(currentTextView);
                     }
                 }
@@ -368,20 +364,18 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         // change colors -> old selected cell back
         // new selected cell -> selected now
         if (newSelectedTextView.getCurrentTextColor() ==
-                ContextCompat.getColor(this, R.color.calendar_not_this_month_color)){
+                ContextCompat.getColor(this, R.color.calendar_not_this_month_color)) {
             if (valuesOfCurrentMonth.get(getIndexOfTextview(newSelectedTextView))[0] !=
-                    Constants.THISMONTHBUTGRAYCOLOR){
+                    Constants.THISMONTHBUTGRAYCOLOR) {
                 // not this moth -> either swap month or it is not possible
-                if (Integer.parseInt((String) newSelectedTextView.getText()) < 20){
+                if (Integer.parseInt((String) newSelectedTextView.getText()) < 20) {
                     goToNextMonth(Integer.parseInt((String) newSelectedTextView.getText()) - 1);
-                }
-                else {
+                } else {
                     // go to previous month
                     goToPrevMonth(Integer.parseInt((String) newSelectedTextView.getText()) - 1);
                 }
             }
-        }
-        else {
+        } else {
             // reset old selected Date: currentSelectedTextView
             int[] value = valuesOfCurrentMonth.get(currentSelectedIndex);
             // TEST might not work reassignment
@@ -400,21 +394,19 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private void initLinearLayoutOnTouch(){
+    private void initLinearLayoutOnTouch() {
         /*
         init the linear layout touch function
         this is needed since we want to recognize a touch everywhere, not just on the text views
          */
         llComplete.setOnTouchListener((view, motionEvent) -> {
-            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                 startX = (int) motionEvent.getX();
                 startY = (int) motionEvent.getY();
-            }
-            else if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+            } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                 slideScreen(startX, startY,
                         (int) motionEvent.getX(), (int) motionEvent.getY());
-            }
-            else {
+            } else {
                 return false;
             }
             return true;
@@ -427,23 +419,19 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         on click method for all the buttons
          */
         int id = view.getId();
-        if (id == R.id.btn_left){
+        if (id == R.id.btn_left) {
             goToPrevMonth(0);
-        }
-        else if (id == R.id.btn_right){
+        } else if (id == R.id.btn_right) {
             goToNextMonth(0);
-        }
-        else if (id == R.id.btn_add_task){
+        } else if (id == R.id.btn_add_task) {
             Intent intent = new Intent(MainView.this, AddTaskView.class);
             intent.putExtra("Date", selectedDate);
             activityResultLauncher.launch(intent);
-        }
-        else if (id == R.id.btn_display_task){
+        } else if (id == R.id.btn_display_task) {
             Intent intent = new Intent(MainView.this, DisplayTasksView.class);
             intent.putExtra("Date", selectedDate);
             activityResultLauncher.launch(intent);
-        }
-        else if (id == R.id.btn_month_year){
+        } else if (id == R.id.btn_month_year) {
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.YEAR, selectedDate.getYear());
             calendar.set(Calendar.MONTH, selectedDate.getMonthValue() - 1);
@@ -454,6 +442,9 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
             calendarView.setDate(milliTime, true, true);
             chooseDateWithCalendar.show();
         }
+        else if(id == R.id.btn_back_calendar) {
+            switchToActivity(StartPageActivity.class, this);
+        }
         else {
             System.out.println("No Button with the id " + id);
             System.out.println("Error in MainView - onClick");
@@ -461,7 +452,7 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    private boolean slideScreen(int x1, int y1, int x2, int y2){
+    private boolean slideScreen(int x1, int y1, int x2, int y2) {
         /*
         change month with a screen slide
 
@@ -470,11 +461,10 @@ public class MainView extends AppCompatActivity implements View.OnClickListener 
          */
         if (Math.abs(x1 - x2) >= DELTA_X && Math.abs(y1 - y2) < DELTA_Y) {
             // check direction
-            if (x1 < x2){
+            if (x1 < x2) {
                 // left to right
                 goToPrevMonth(0);
-            }
-            else{
+            } else {
                 // right to left
                 goToNextMonth(0);
             }

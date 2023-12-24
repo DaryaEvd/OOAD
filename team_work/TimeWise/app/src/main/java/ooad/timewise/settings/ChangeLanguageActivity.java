@@ -3,6 +3,7 @@ package ooad.timewise.settings;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,7 +32,7 @@ public class ChangeLanguageActivity extends AppCompatActivity {
             langManager.applyCurrentLang(this);
         }
         else {
-            ActivitiesUtils.showInfo("Language of app is english already :)", this);
+             ActivitiesUtils.showInfo("Language of app is english already :)", this);
         }
     }
 

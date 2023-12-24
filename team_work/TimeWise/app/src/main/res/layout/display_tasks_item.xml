@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
-    android:background="@color/light_blue"
+    android:background="@color/button_colors"
     android:id="@+id/display_tasks_item_relative_layout">
     
     <ImageView

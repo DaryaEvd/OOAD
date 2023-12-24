@@ -31,7 +31,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="@string/back"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -42,9 +42,9 @@
                 android:layout_weight="2"
                 android:text="@string/feb_2021"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/button_text_color"
                 android:textSize="20sp"
-                android:background="@android:color/transparent"/>
+                android:background="@color/button_colors"/>
 
             <Button
                 android:id="@+id/btn_right"
@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="@string/forward"
-                android:textColor="@color/blue"
+                android:textColor="@color/button_colors"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:text="@string/Monday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
                 android:layout_weight="1"
                 android:text="@string/Tuesday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                 android:layout_weight="1"
                 android:text="@string/Wednesday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                 android:layout_weight="1"
                 android:text="@string/Thursday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:text="@string/Friday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -122,7 +122,7 @@
                 android:layout_weight="1"
                 android:text="@string/Saturday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -132,7 +132,7 @@
                 android:layout_weight="1"
                 android:text="@string/Sunday"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/custom_red"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -169,7 +169,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/normal_border"
                     android:textAlignment="center"
-                    android:textColor="@color/calendar_number_color"
+                    android:textColor="@color/button_text_color"
                     android:textSize="20sp" />
 
                 <TextView
@@ -466,7 +466,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/normal_border"
                     android:textAlignment="center"
-                    android:textColor="@color/calendar_number_color"
+                    android:textColor="@color/button_text_color"
                     android:textSize="20sp" />
 
                 <TextView
@@ -521,7 +521,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/normal_border"
                     android:textAlignment="center"
-                    android:textColor="@color/calendar_number_color"
+                    android:textColor="@color/button_text_color"
                     android:textSize="20sp" />
 
                 <TextView
@@ -533,7 +533,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/normal_border"
                     android:textAlignment="center"
-                    android:textColor="@color/calendar_number_color"
+                    android:textColor="@color/button_text_color"
                     android:textSize="20sp" />
 
                 <TextView
@@ -699,7 +699,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/button_colors"
         android:text="@string/add_task"
         android:textColor="@color/button_text_color"
         android:textSize="20sp"
@@ -712,10 +712,23 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/button_colors"
         android:text="@string/display_task"
         android:textColor="@color/button_text_color"
         android:textSize="20sp"
         android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_back_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/button_colors"
+        android:text="@string/back_btn_text"
+        android:textColor="@color/button_text_color"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

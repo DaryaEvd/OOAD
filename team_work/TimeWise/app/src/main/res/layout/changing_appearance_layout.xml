@@ -22,8 +22,8 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <LinearLayout
-        android:layout_width="309dp"
-        android:layout_height="269dp"
+        android:layout_width="297dp"
+        android:layout_height="232dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,13 +48,6 @@
             android:text="@string/switch_to_orange_yellow_theme"
             android:textColor="@color/button_text_color" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:backgroundTint="@color/button_colors"
-            android:text="Switch to ... theme"
-            android:textColor="@color/button_text_color" />
 
         <Button
             android:id="@+id/change_appearance_back_btn"

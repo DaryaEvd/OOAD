@@ -36,11 +36,11 @@ public class LanguageManager {
     public void switchToCurrentLanguage(Context context) {
         SharedPreferences themePref = context.getSharedPreferences(SHARED_PREF_NAME_FOR_LANG, MODE_PRIVATE);
 
-        String actualTheme = themePref.getString(LANGUAGE_KEY, "");
+        String actualLang = themePref.getString(LANGUAGE_KEY, "");
 
-        if (actualTheme.equals(context.getString(R.string.english))) {
+        if (actualLang.equals(context.getString(R.string.english))) {
             AppCompatDelegate.setApplicationLocales(switchLocale(context, "en"));
-        } else if (actualTheme.equals(context.getString(R.string.rus))) {
+        } else if (actualLang.equals(context.getString(R.string.rus))) {
             AppCompatDelegate.setApplicationLocales(switchLocale(context, "ru"));
         }
     }

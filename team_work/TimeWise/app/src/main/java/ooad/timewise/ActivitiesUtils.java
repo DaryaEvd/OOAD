@@ -9,7 +9,9 @@ public class ActivitiesUtils {
         Intent intent = new Intent(context, activityClass);
         context.startActivity(intent);
     }
-    public static void showInfo(String info, Context context){
+
+    public static void showInfo(String info, Context context) {
         Toast.makeText(context, info, Toast.LENGTH_LONG).show();
     }
+
 }

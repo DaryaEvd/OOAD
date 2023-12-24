@@ -47,7 +47,7 @@
 
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
-    <string name="display_task">DISPLAY TASK</string>
+    <string name="display_task">Показать задачи</string>
     <string name="add_task">Добавить задачу</string>
 
     <string name="Monday">ПОН</string>
@@ -79,12 +79,12 @@
     <string name="reminder_3">поставить напоминание за 1 час до</string>
     <string name="reminder_2">поставить напоминание за 30 минут до</string>
     <string name="reminder_1">поставить напоминание за 5 минут до</string>
-    <string name="autostart_permission">Do you want to allow this app to have autostart Permissions? If not the app will not be able to function perfectly.</string>
+    <string name="autostart_permission">Хотите разрешить приложению делать перезагрузку автоматически? Если нет, приложение будет работать с помехами.</string>
     <string name="deny_permission">Запретить</string>
     <string name="allow_permission">Разрешить</string>
     <string name="dont_show_again_cb">не показывать снова</string>
-    <string name="repeating_event_edit">This is a repeating Event. Do you want to edit all Events or only this one?</string>
-    <string name="repeating_event_remove">This is a repeating Event. Do you want to remove all Events or only this one?</string>
+    <string name="repeating_event_edit">Это повторяющееся событие. Вы хотите изменить все собатия или только текущее?</string>
+    <string name="repeating_event_remove">Это повторяющееся событие. Вы хотите удалить все собатия или только текущее?</string>
     <string name="remove_all_events">все события</string>
     <string name="remove_only_this">это событие</string>
     <string name="edit_all_events">все события</string>
@@ -94,7 +94,7 @@
     <string name="dark_theme">dt</string>
     <string name="choose_theme">Выберите тему</string>
     <string name="switch_to_dark_theme">Изменить на темную тему</string>
-    <string name="switch_to_orange_yellow_theme">Изменить на желто-оранжевую тему</string>
+    <string name="switch_to_orange_yellow_theme">Изменить на светлую тему</string>
     <string name="time">время</string>
     <string name="alarm_title">Заголовок будильника</string>
     <string name="mon">Пн</string>
@@ -117,4 +117,9 @@
     <string name="date">Дата</string>
 
     <string name="choose_language">Выберите язык</string>
-</resources>
+
+    <string name="confirm_password_dark">Пожалуйста, подтвердите пароль</string>
+    <string name="theme_already_set_dark">Тёмная тема уже установлена</string>
+    <string name="theme_already_set_light">Светлая тема уже установлена</string>
+
+ </resources>
