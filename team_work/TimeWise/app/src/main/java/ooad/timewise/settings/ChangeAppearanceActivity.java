@@ -33,9 +33,6 @@ public class ChangeAppearanceActivity extends AppCompatActivity {
         } else {
             ActivitiesUtils.showInfo("You already have the Dark theme", this);
         }
-
-//        appearanceManager.saveTheme(this, getString(R.string.dark_theme));
-//        appearanceManager.applyCurrentTheme(this); // Apply the theme without recreating the activity
     }
 
     private void clickOnYellowOrangeThemeBtn(View v) {

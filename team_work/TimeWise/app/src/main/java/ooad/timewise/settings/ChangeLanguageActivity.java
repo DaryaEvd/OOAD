@@ -10,7 +10,7 @@ import ooad.timewise.ActivitiesUtils;
 import ooad.timewise.R;
 
 public class ChangeLanguageActivity extends AppCompatActivity {
-    private static final AppearanceManager appearanceManager = new AppearanceManager();
+    private static final LanguageManager langManager = new LanguageManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +26,22 @@ public class ChangeLanguageActivity extends AppCompatActivity {
     }
 
     private void clickOnEnglishBtn(View v) {
-        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.english))) {
-            appearanceManager.saveLanguage(this, getString(R.string.english));
-            ActivitiesUtils.showInfo("Please, restart the app", this);
+        if (!langManager.getCurrentLang(this).equals(getString(R.string.english))) {
+            langManager.saveLanguage(this, getString(R.string.english));
+            langManager.applyCurrentLang(this);
+        }
+        else {
+            ActivitiesUtils.showInfo("Language of app is english already :)", this);
         }
     }
 
     private void clickOnRussianBtn(View v) {
-        if (!appearanceManager.getCurrentTheme(this).equals(getString(R.string.rus))) {
-            appearanceManager.saveLanguage(this, getString(R.string.rus));
-            ActivitiesUtils.showInfo("Please, restart the app", this);
+        if (!langManager.getCurrentLang(this).equals(getString(R.string.rus))) {
+            langManager.saveLanguage(this, getString(R.string.rus));
+            langManager.applyCurrentLang(this);
+        }
+        else {
+            ActivitiesUtils.showInfo("Язык приложения и так русский :)", this);
         }
     }
 
