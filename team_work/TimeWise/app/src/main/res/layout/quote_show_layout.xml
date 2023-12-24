@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/button_colors"
-            android:text="@string/back_btn_text"
+            android:text="@string/one_more_btn_text"
             android:textColor="@color/button_text_color" />
 
         <Button
